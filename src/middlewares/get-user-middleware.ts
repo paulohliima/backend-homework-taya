@@ -1,8 +1,10 @@
-import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Request, Response, NextFunction } from 'express';
-import { User } from './entities/entities.entity';
-import { Repository } from 'typeorm';
+import { Injectable, NestMiddleware } from '@nestjs/common';
+
+import { AppError } from 'src/hooks/checkError';
+import { User } from '../entities/entities.entity';
 
 @Injectable()
 export class UserMiddleware implements NestMiddleware {
@@ -17,7 +19,11 @@ export class UserMiddleware implements NestMiddleware {
       const user = await this.userRepository.findOneBy({ id: Number(userId) });
       if (user) {
         (req as any).user = user;
+      } else {
+        throw new AppError('Permission denied', 403);
       }
+    } else {
+      throw new AppError('Permission denied', 403);
     }
     next();
   }

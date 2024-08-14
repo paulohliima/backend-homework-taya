@@ -50,17 +50,17 @@ O exercício requer [Node.js](https://nodejs.org/en/) 16. Recomendamos a versão
 
 Abaixo está uma lista das APIs necessárias para o aplicativo.
 
-1. **_GET_** `/proposals/:id` - Corrigir a API para retornar a proposta apenas se pertencer ao user que está chamando.
+1. **_GET_** `/proposals/:id` - Corrigir a API para retornar a proposta apenas se pertencer ao user que está chamando. OK
 
-1. **_GET_** `/proposals` - Retorna lista de proposals pendentes de um user.
+1. **_GET_** `/proposals` - Retorna lista de proposals pendentes de um user. OK
 
-1. **_GET_** `/proposals/refused` - Obter propostas rejeitadas criadas por um user.
+1. **_GET_** `/proposals/refused` - Obter propostas rejeitadas criadas por um user. OK
 
-1. **_POST_** `/proposals/:proposal_id/approve` - Dado uma proposta pendente, aprovar a proposta por id, retornar a proposta atualizada, valor do profit deve ser creadita no usuario que executou a operacao.
+1. **_POST_** `/proposals/:proposal_id/approve` - Dado uma proposta pendente, aprovar a proposta por id, retornar a proposta atualizada, valor do profit deve ser creadita no usuario que executou a operacao. OK
 
-1. **_GET_** `/admin/profit-by-status` - Retorna a soma do profit de todas as propostas por usuario agrupada por status.
+1. **_GET_** `/admin/profit-by-status` - Retorna a soma do profit de todas as propostas por usuario agrupada por status. OK ?
 
-1. **_GET_** `/admin/best-users?start=<date>&end=<date>` - Retorna os users que possuem o maior profit de propostas em sucesso vinculado.
+1. **_GET_** `/admin/best-users?start=<date>&end=<date>` - Retorna os users que possuem o maior profit de propostas em sucesso vinculado. OK
 
 ```
  [

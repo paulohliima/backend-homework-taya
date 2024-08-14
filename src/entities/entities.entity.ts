@@ -6,12 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-export enum ProposalStatus {
-  SUCCESSFUL = 'SUCCESSFUL',
-  REFUSED = 'REFUSED',
-  ERROR = 'ERROR',
-  PENDING = 'PENDING',
-}
+import { ProposalStatus } from 'src/interfaces';
 
 @Entity({ name: 'users' })
 export class User {
